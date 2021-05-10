@@ -9,13 +9,17 @@ public class Movie {
 
     public Movie(String title, PriceCode priceCode) {
         this.title = title;
-        this.priceCode = priceCode;
+        setPriceCode(priceCode);
     }
 
     public PriceCode getPriceCode() {
         return priceCode;
     }
     public void setPriceCode(PriceCode priceCode) {
+        if(priceCode == null) {
+            this.priceCode = PriceCode.REGULAR;
+            return;
+        }
         this.priceCode = priceCode;
     }
     public String getTitle (){
