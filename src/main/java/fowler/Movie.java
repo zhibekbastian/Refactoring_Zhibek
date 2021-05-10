@@ -15,6 +15,7 @@ public class Movie {
     public PriceCode getPriceCode() {
         return priceCode;
     }
+
     public void setPriceCode(PriceCode priceCode) {
         if(priceCode == null) {
             this.priceCode = PriceCode.REGULAR;
@@ -22,6 +23,7 @@ public class Movie {
         }
         this.priceCode = priceCode;
     }
+
     public String getTitle (){
         return title;
     };

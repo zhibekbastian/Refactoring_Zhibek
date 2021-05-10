@@ -2,10 +2,10 @@ package fowler;
 
 import java.util.Enumeration;
 import java.util.Vector;
-
 import static fowler.PriceCode.*;
 
 class Customer {
+
     private String name;
     private Vector rentals = new Vector();
 
@@ -20,6 +20,7 @@ class Customer {
     public String getName (){
         return name;
     };
+
     public String statement() {
         TotalAmount totalAmount = new TotalAmount();
         RenterPoints renterPoints = new RenterPoints();
@@ -35,7 +36,7 @@ class Customer {
             // add frequent renter points
             renterPoints.increase();
             // add bonus for a two day new release rental
-            if ((each.getMovie().getPriceCode() == NEW_RELEASE) && each.getDaysRented() > 1)
+            if((each.getMovie().getPriceCode() == NEW_RELEASE) && each.getDaysRented() > 1)
                 renterPoints.increase();
             //show figures for this rental
             result += "\t" + each.getMovie().getTitle()+ "\t" + "\t" + each.getDaysRented() + "\t" + String.valueOf(thisAmount) + "\n";
@@ -66,5 +67,4 @@ class Customer {
         }
         return thisAmount;
     }
-
 }
